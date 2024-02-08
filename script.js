@@ -261,3 +261,8 @@ function defeatMonster() {
 function lose() {
     update(locations[5]);
 }
+
+// Function for when the player wins the entire game
+function winGame() {
+    update(locations[6]);
+}
