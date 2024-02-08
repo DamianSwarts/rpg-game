@@ -280,3 +280,42 @@ function restart() {
     xpText.innerText = xp;
     goTown();
 }
+
+// Functions for a hidden easter egg in the game. Just to keep things exciting
+function easterEgg() {
+    update(locations[7]);
+}
+
+function pickTwo() {
+    pick(2);
+}
+  
+function pickEight() {
+    pick(8);
+}
+  
+function pick(guess) {
+    const numbers = []; //Declare an empty array
+    while (numbers.length < 10) {   // while loop that will display random numbers less than 10
+      numbers.push(Math.floor(Math.random() * 11));
+    }
+    // Display the random numbers to the user
+    text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
+    for (let i = 0; i < 10; i++) {
+      text.innerText += numbers[i] + "\n";
+    }
+    if (numbers.includes(guess)) {  //see if the user's guess is in the numbers array declared above
+      // if the user guessed correct, they win 20 gold
+      text.innerText += "Right! You win 20 gold!";
+      gold += 20;
+      goldText.innerText = gold;
+    } else {
+      // if the user guessed wrong, the lose 10 health
+      text.innerText += "Wrong! You lose 10 health!";
+      health -= 10;
+      healthText.innerText = health;
+      if (health <= 0) {    //if the user's health is less than or equal to 0, they lose the game
+        lose();
+      }
+    }
+}
