@@ -174,4 +174,20 @@ function sellWeapon() {
     } else {    // Don't allow user to sell their only weapon
       text.innerText = "Don't sell your only weapon!";
     }
-  }
+}
+
+// Functions that enables the player to fight the different monsters, respectively
+function fightSlime() {
+    fighting = 0;
+    goFight();
+}
+  
+function fightBeast() {
+    fighting = 1;
+    goFight();
+}
+  
+function fightDragon() {
+    fighting = 2;
+    goFight();
+}
