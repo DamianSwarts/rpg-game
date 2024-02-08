@@ -240,4 +240,9 @@ function getMonsterAttackValue(level) {
 // Function to see if the monster is hit
 function isMonsterHit() {
     return Math.random() > .2 || health < 20;
-  }
+}
+
+// Function for the player to dodge an attack from their opponent
+function dodge() {
+    text.innerText = "You dodge the attack from the " + monsters[fighting].name;
+}
