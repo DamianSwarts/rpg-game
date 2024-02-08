@@ -63,3 +63,16 @@ function buyWeapon() {
       button2.onclick = sellWeapon;
     }
 }
+
+// Function for user to sell weapons if they don't have enough gold
+function sellWeapon() {
+    if (inventory.length > 1) {
+      gold += 15;
+      goldText.innerText = gold;
+      let currentWeapon = inventory.shift();    // Store the weapon at index 0 in currentWeapon
+      text.innerText = "You sold a " + currentWeapon + ".";
+      text.innerText += " In your inventory you have: " + inventory;
+    } else {    // Don't allow user to sell their only weapon
+      text.innerText = "Don't sell your only weapon!";
+    }
+  }
