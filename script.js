@@ -103,6 +103,18 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+// Function to update the other functions to repetition
+function update(location) {
+    monsterStats.style.display = "none";
+    button1.innerText = location["button text"][0];
+    button2.innerText = location["button text"][1];
+    button3.innerText = location["button text"][2];
+    button1.onclick = location["button functions"][0];
+    button2.onclick = location["button functions"][1];
+    button3.onclick = location["button functions"][2];
+    text.innerHTML = location.text;
+}
+
 // Function for user to buy health
 function buyHealth() {
     if (gold >= 10) {
