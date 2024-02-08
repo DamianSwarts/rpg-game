@@ -255,4 +255,9 @@ function defeatMonster() {
     goldText.innerText = gold;
     xpText.innerText = xp;
     update(locations[4]);
-  }
+}
+
+// Functions for when the loses to their opponent
+function lose() {
+    update(locations[5]);
+}
