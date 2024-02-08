@@ -246,3 +246,13 @@ function isMonsterHit() {
 function dodge() {
     text.innerText = "You dodge the attack from the " + monsters[fighting].name;
 }
+
+// Function that rewards the player with more gold if they beat their opponent
+function defeatMonster() {
+    // Determine how much the player gets based on the level of the monster
+    gold += Math.floor(monsters[fighting].level * 6.7);
+    xp += monsters[fighting].level;     //Increase the user's experience points if they defeat the monster
+    goldText.innerText = gold;
+    xpText.innerText = xp;
+    update(locations[4]);
+  }
