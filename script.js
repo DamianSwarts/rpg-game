@@ -236,3 +236,8 @@ function getMonsterAttackValue(level) {
     console.log(hit);
     return hit > 0 ? hit : 0;
 }
+
+// Function to see if the monster is hit
+function isMonsterHit() {
+    return Math.random() > .2 || health < 20;
+  }
