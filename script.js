@@ -23,3 +23,15 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
+
+// Function for user to buy health
+function buyHealth() {
+    if (gold >= 10) {
+      gold -= 10;
+      health += 10;
+      goldText.innerText = gold;
+      healthText.innerText = health;
+    } else {
+      text.innerText = "You do not have enough gold to buy health.";
+    }
+}
