@@ -115,6 +115,11 @@ function update(location) {
     text.innerHTML = location.text;
 }
 
+// Function to take the user to the town square location if they choose to do so
+function goTown() {
+    update(locations[0]);
+}
+
 // Function for user to buy health
 function buyHealth() {
     if (gold >= 10) {
