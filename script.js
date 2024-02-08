@@ -126,6 +126,10 @@ function goStore() {
 }
 
 // Function to take the user to the cave location if they choose to do so
+function goCave() {
+    update(locations[2]);
+}
+
 // Function for user to buy health
 function buyHealth() {
     if (gold >= 10) {
