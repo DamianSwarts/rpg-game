@@ -266,3 +266,17 @@ function lose() {
 function winGame() {
     update(locations[6]);
 }
+
+// Function for when a player decides to restart the game. 
+// The function resets all their stats back to how they first started
+function restart() {
+    xp = 0;
+    health = 100;
+    gold = 50;
+    currentWeapon = 0;
+    inventory = ["stick"];
+    goldText.innerText = gold;
+    healthText.innerText = health;
+    xpText.innerText = xp;
+    goTown();
+}
