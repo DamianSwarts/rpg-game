@@ -120,6 +120,12 @@ function goTown() {
     update(locations[0]);
 }
 
+// Function to take the user to the store location if they choose to do so
+function goStore() {
+    update(locations[1]);
+}
+
+// Function to take the user to the cave location if they choose to do so
 // Function for user to buy health
 function buyHealth() {
     if (gold >= 10) {
