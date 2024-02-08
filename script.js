@@ -200,3 +200,32 @@ function goFight() {
     monsterName.innerText = monsters[fighting].name;
     monsterHealthText.innerText = monsterHealth;
 }
+
+// Function that allows the user to attack the monster they're fighting, if they choose to do so
+function attack() {
+    // Display the information about what is happening to the user.
+    text.innerText = "The " + monsters[fighting].name + " attacks.";
+    text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+    health -= getMonsterAttackValue(monsters[fighting].level);  // Decrease the health of the monster if the player hits it.
+    if (isMonsterHit()) {
+      monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+    } else {
+      text.innerText += " You miss.";
+    }
+    healthText.innerText = health;  // Update the health stats of the player
+    monsterHealthText.innerText = monsterHealth;    // Update the health stats of the monster
+    if (health <= 0) {
+      lose();
+    } else if (monsterHealth <= 0) {
+      if (fighting === 2) {
+        winGame();
+      } else {
+        defeatMonster();
+      }
+    }
+    // The user's weapon can break 
+    if (Math.random() <= .1 && inventory.length !== 1) {
+      text.innerText += " Your " + inventory.pop() + " breaks.";
+      currentWeapon--;
+    }
+}
